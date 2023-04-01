@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+  labels:
+    group: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: node-app
+      tier: backend
+  template:
+    metadata:
+      labels:  
+        name: node-app
+        tier: backend
+    spec:
+      containers:
+        - name: node-application
+          image: dheeraj1429/node-app
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            periodSeconds: 10
+            initialDelaySeconds: 3

@@ -1,0 +1,6 @@
+{
+    "yaml.schemas": {
+        "kubernetes": "*.yaml",
+        "kubernetes://schema/apps/v1%40deployment": "file:///Users/dheeraj/Documents/Docker-kub/kub-action-05-finished/master-deployment.yaml"
+    }
+}

@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: backend
   labels:
-    group: node-backend-app
+    group: backend-app
 spec:
   selector:
-    app: node-app
+    name: node-application
   ports:
     - protocol: "TCP"
       port: 80
       targetPort: 3000
-  type: LoadBalancer
+  type:  LoadBalancer

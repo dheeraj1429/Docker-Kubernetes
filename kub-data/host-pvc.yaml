@@ -4,9 +4,9 @@ metadata:
   name: host-pvc
 spec:
   volumeName: host-pv
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
-  storageClassName: standard
   resources:
     requests:
       storage: 1Gi

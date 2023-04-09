@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  api:
+    build: 
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ADDRESS=app:3000
+    volumes:
+      - ./api:/app
+  app:
+    build: 
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - API_ADDRESS=api:8000
+    volumes:
+      - ./app:/app
+      - task:/app/task
+volumes:
+  task:

@@ -14,9 +14,7 @@ spec:
     spec:
       containers:
         - name: node-api-app
-          image: dheeraj1429/node-api-app:v1
+          image: dheeraj1429/node-api-app:v6
           env:
-            - name: APP_ADDRESS
-              value: localhost:3000
-        - name: node-client-app
-          image: dheeraj1429/node-client-app     
+            - name: CLIENT_APP
+              value: "client-app.default"

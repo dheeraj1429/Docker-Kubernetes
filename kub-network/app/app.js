@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/user-info', async (req, res, next) => {
    const { name, email } = req.query;
    const respose = await axios.get(
-      `http://${process.env.API_ADDRESS}/info?name=${name}&email=${email}`
+      `http://${process.env.API_APP_SERVICE_HOST}:8000/info?name=${name}&email=${email}`
    );
    if (respose?.data?.status === 200) {
       return res.status(200).json(respose.data);

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-client-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-client
+  template:
+    metadata:
+      labels:
+        app: node-client
+    spec:
+      containers:
+        - name: node-client-app
+          image: dheeraj1429/node-client-app:v1
+          env:
+            - name: API_ADDRESS
+              value: "10.98.118.17:8000"
